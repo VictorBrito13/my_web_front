@@ -1,0 +1,9 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7EC8E3;
+    height: 95px;
+    font-size: 20px;
+    font-family: 'segoe-print';
+}

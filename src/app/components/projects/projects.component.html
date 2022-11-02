@@ -1,0 +1,18 @@
+<section>
+    <h1 class="section-title">My projects</h1>
+    <div class="projects-container" #projects_container>
+        <div class="project-container" *ngFor="let project of projects">
+            <a href="{{project.link}}" class="project">
+                <p class="project-description" title="{{project.description}}">{{project.description}}</p>
+                <figure class="project-img-container">
+                    <img src="{{project.img}}" alt="{{project.title}}" class="project-img">
+                    <figcaption class="project-title">{{project.title}}</figcaption>
+                </figure>
+                <span class="techs">
+                    <i *ngFor="let icon of project.techs"
+                    class="bx {{icon}}"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</section>

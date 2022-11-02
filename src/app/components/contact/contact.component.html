@@ -1,0 +1,72 @@
+<section>
+    <h1 class="section-title">Contact me</h1>
+
+    <form #new_offer class="form-flex" [formGroup]="contact_form" (ngSubmit)="submit_offer(new_offer)">
+        <span class="form-grid">
+            <span class="email-container">
+                <!--* Input -->
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com" formControlName="email">
+                <div class="warnings">
+                    <p>
+                        Ups your email is not valid <br>
+                        email example:
+                    </p>
+                    <ul>
+                        <li>example@gmail.com</li>
+                        <li>example@outlook.com</li>
+                    </ul>
+                </div>
+            </span>
+            <span class="cellphone-container">
+                <!--* Input -->
+                <label for="cellphone">Cellphone</label>
+                <input type="tel" id="cellphone" placeholder="777-***-****" formControlName="cellphone">
+                <div class="warnings">
+                    <p>
+                        Ups your cellphone is not valid <br>
+                        Format: <br>
+                    </p>
+                    <ul>
+                        <li>777-***-****</li>
+                    </ul>
+                </div>
+            </span>
+        </span>
+
+        <!--* Input -->
+        <label for="company">Company or Name</label>
+        <input type="text" id="company" placeholder="Company name" formControlName="company">
+        <div class="warnings">
+            <p>
+                Name not valid <br>
+                Use:
+            </p>
+            <ul>
+                <li>Alpha numerics characters</li>
+                <li>[ _ - , . ]</li>
+            </ul>
+        </div>
+
+        <!--* Input -->
+        <label for="details">Poject Details</label>
+        <textarea id="details" placeholder="Details" formControlName="details"></textarea>
+        <div class="warnings">
+            <p>
+                This is not valid <br>
+                Use:
+            </p>
+            <ul>
+                <li>Alpha numerics characters</li>
+                <li>[ _ - , . ]</li>
+            </ul>
+        </div>
+
+        <input type="submit" value="Send">
+
+        <p class="success" #success_sended>
+            Sended succesfully <br>
+            Thanks!!!!
+        </p>
+    </form>
+</section>

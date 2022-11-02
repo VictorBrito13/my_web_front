@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'segoe-print';
+    src: url(./assets/fonts/segoepr.ttf) format('TrueType');
+}
+@font-face {
+    font-family: 'segoe-script';
+    src: url(./assets/fonts/segoesc.ttf) format('TrueType');
+}
+@font-face {
+    font-family: 'Yu Gothich UI';
+    src: url(./assets/fonts/yugothil.ttf) format('TrueType');
+}
+
+*{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    background-color: #B1D4E0;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #0C2D48;
+    border-radius: 15px;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: #000C66;
+}
+section{
+    width: 90%;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+}
+.section-title{
+    overflow: hidden;
+    font-size: 48px;
+    font-family: 'segoe-script';
+    color: #DBF5F0;
+    text-align: center;
+    position: relative;
+    z-index: 50;
+    margin: 15px auto;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 5px;
+    transition: color .6s linear;
+}
+.section-title-animable::after{
+    transition: opacity .6s linear;
+    content: '';
+    display: block;
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    background-color: #37BEB0;
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    animation-name: increase-line;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes increase-line {
+    0%{
+        width: 80%;
+    }
+    50%{
+        width: 90%;
+        left: 5%;
+    }
+}

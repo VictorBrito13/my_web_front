@@ -1,0 +1,10 @@
+<section>
+    <h1 class="section-title">My Skills</h1>
+    <div class="skills-container" #skills_container>
+        <div class="skill" *ngFor="let tech of techs" (click)="accordion($event)">
+            <h2>{{tech.title}}</h2>
+            <img src="{{tech.img}}" class="tech-img" alt="{{tech.title}}">
+            <p>{{tech.description}}</p>
+        </div>
+    </div>
+</section>
