@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 .menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #7EC8E3;
     width: 90%;
     margin: auto;
@@ -14,9 +17,10 @@
     top: 0%;
     z-index: 100;
     border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.bx-menu{
+    font-size: 35px;
+    display: none;
 }
 .menu{
     display: grid;
@@ -25,7 +29,9 @@
     width: 100%;
     padding: 0%;
     margin: 0%;
+    overflow: hidden;
     list-style: none;
+    transition: height .2s linear, width .2s linear;
 }
 .menu li{
     text-align: center;
@@ -63,4 +69,20 @@ li:hover .menu-item::after{
 }
 .menu-item-active *{
     color: #FFD53D;
+}
+
+@media (min-width:360px) and (max-width: 720px){
+    .menu{
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+        height: 100px;
+    }
+    .bx-menu{
+        display: block;
+    }
+    .menu-closed{
+        height: 0px;
+        width: 0px;
+        transition: height .2s linear, width .2s linear;
+    }
 }

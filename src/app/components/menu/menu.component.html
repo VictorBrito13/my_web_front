@@ -1,5 +1,6 @@
 <nav class="menu-container">
-    <ul class="menu">
+    <i class='bx bx-menu' (click)="displayMenu()"></i>
+    <ul class="menu" #menu>
         <li [routerLinkActive]="['menu-item-active']">
         <a
             [routerLink]="['/home']"

@@ -24,13 +24,14 @@ label{
     color: #FEFCFF;
     display: block;
 }
-input, textarea{
+input, textarea, button{
     width: 100%;
     resize: none;
     height: 45px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     border: 0px;
+    margin: 15px 0px;
     background-color: #ADD3D0;
     border-radius: 5px;
     transition: background-color .3s linear;
@@ -46,8 +47,6 @@ textarea{
     height: 100px;
 }
 .warnings{
-    opacity: 0;
-    visibility: hidden;
     font-size: 1rem;
     padding: 5px;
     font-family: 'Yu Gothic UI';
@@ -56,11 +55,6 @@ textarea{
     margin: 10px auto;
     background-color: #fff;
     border-radius: 10px;
-    transition: opacity .3s linear, visibility .3s linear;
-}
-.warnings-active{
-    opacity: 1;
-    visibility: visible;
     transition: opacity .3s linear, visibility .3s linear;
 }
 .warnings *{
@@ -72,14 +66,43 @@ textarea{
 .warnings ul{
     color: #C102F9;
 }
-input[type="submit"]{
+button[type="submit"]{
     color: #fff;
-    background-color: #041F60;
+    background-color: #01949A;
     font-size: 15px;
     font-family: 'segoe-print';
     width: 20%;
     margin: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
     cursor: pointer;
+    transition: color .2s linear;
+}
+button[type="submit"]:hover{
+    transition: color .2s linear;
+    color: #000;
+}
+button[type="submit"]::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    border-radius: inherit;
+    z-index: -10;
+    background-color: #B4FEE7;
+    transition: top .2s linear, left .2s linear,
+        width .2s linear, height .2s linear;
+}
+button[type="submit"]:hover::before{
+    transition: top .2s linear, left .2s linear,
+        width .2s linear, height .2s linear;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
 }
 .success{
     color: #0EFF00;
@@ -99,4 +122,9 @@ input[type="submit"]{
     opacity: 1;
     visibility: visible;
     transition: opacity .3 linear, visibility .3s linear;
+}
+@media (max-width: 930px) {
+    .form-grid{
+        grid-template-columns: 100%;
+    }
 }

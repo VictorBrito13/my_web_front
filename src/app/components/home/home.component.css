@@ -27,3 +27,13 @@
     border-radius: 50%;
     background-color: #050A30;
 }
+
+@media (max-width: 1100px) {
+    .grid-about-container{
+        grid-template-columns: 100%;
+    }
+    .image-container img{
+        width: 250px;
+        height: 250px;
+    }
+}

@@ -7,7 +7,8 @@
                 <!--* Input -->
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="example@gmail.com" formControlName="email">
-                <div class="warnings">
+                <div class="warnings"
+                *ngIf="contact_form.get('email')?.hasError('required') && contact_form.get('email')?.touched">
                     <p>
                         Ups your email is not valid <br>
                         email example:
@@ -22,7 +23,8 @@
                 <!--* Input -->
                 <label for="cellphone">Cellphone</label>
                 <input type="tel" id="cellphone" placeholder="777-***-****" formControlName="cellphone">
-                <div class="warnings">
+                <div class="warnings"
+                *ngIf="contact_form.get('cellphone')?.hasError('required') && contact_form.get('cellphone')?.touched">
                     <p>
                         Ups your cellphone is not valid <br>
                         Format: <br>
@@ -37,7 +39,8 @@
         <!--* Input -->
         <label for="company">Company or Name</label>
         <input type="text" id="company" placeholder="Company name" formControlName="company">
-        <div class="warnings">
+        <div class="warnings"
+        *ngIf="contact_form.get('company')?.hasError('required') && contact_form.get('company')?.touched">
             <p>
                 Name not valid <br>
                 Use:
@@ -51,7 +54,8 @@
         <!--* Input -->
         <label for="details">Poject Details</label>
         <textarea id="details" placeholder="Details" formControlName="details"></textarea>
-        <div class="warnings">
+        <div class="warnings"
+        *ngIf="contact_form.get('details')?.hasError('required') && contact_form.get('details')?.touched">
             <p>
                 This is not valid <br>
                 Use:
@@ -62,7 +66,7 @@
             </ul>
         </div>
 
-        <input type="submit" value="Send">
+        <button type="submit">Send</button>
 
         <p class="success" #success_sended>
             Sended succesfully <br>

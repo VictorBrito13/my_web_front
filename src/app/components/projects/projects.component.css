@@ -24,13 +24,13 @@ section{
     transition: margin .3s linear;
 }
 .project{
-    width: 100%;
-    margin: auto;
-    color: #000;
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 80% 20%;
     column-gap: 5px;
+    width: 100%;
+    margin: auto;
+    color: #000;
     background-size: 200% 200%;
     background-image: linear-gradient(to right bottom, #2B18A3, #88C9FA);
     border-radius: 15px;
@@ -74,4 +74,14 @@ section{
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
+}
+
+@media (max-width: 615px) {
+    .project{
+        grid-template-columns: 100%;
+        grid-template-rows: none;
+    }
+    .project-img-container{
+        grid-area: unset;
+    }
 }
