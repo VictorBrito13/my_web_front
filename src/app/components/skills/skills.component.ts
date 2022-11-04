@@ -31,4 +31,8 @@ export class SkillsComponent implements OnInit {
   accordion(e:any){
     if(e.target instanceof HTMLDivElement)e.target.classList.toggle("skill-active")
   }
+
+  trackBySkills(index:number, skill:TechInterface){
+    return index
+  }
 }

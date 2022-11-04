@@ -28,4 +28,8 @@ export class ProjectsComponent implements OnInit {
     }, 10)
   }
 
+  trackByProjects(index:number, project:ProjectInterface){
+    return index
+  }
+
 }
