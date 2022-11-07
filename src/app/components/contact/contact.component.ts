@@ -9,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class ContactComponent implements OnInit {
   public contact_form:FormGroup
-  @ViewChild('succes_sended') succes_paragraph:any
+  @ViewChild('success_sended') succes_paragraph:any
 
   constructor(
     private http: HttpService,
@@ -33,7 +33,11 @@ export class ContactComponent implements OnInit {
         form.reset()
         this.renderer2.addClass(this.succes_paragraph.nativeElement, 'success-active')
       },
-      (err) => console.error(err)
+      (err) => {
+        console.error(err)
+        if(err.status === 400) alert('please fill all the fields')
+        if(err.status >= 500 && err.status <= 600) alert('An error has occurred but is not your foul, please try again more later')
+      }
     )
   }
 

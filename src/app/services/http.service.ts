@@ -14,16 +14,18 @@ interface Offer{
 })
 export class HttpService {
   private url: string
+  private url_dev:string
 
   constructor(
     private http: HttpClient
   ) {
-    this.url = 'http://localhost:3000/api'
+    this.url = 'https://myappserver-production.up.railway.app/api/new_offer'
+    this.url_dev = 'http://localhost:31416/api/new_offer'
   }
 
   new_offer(offer:Offer):Observable<any>{
     let new_offer = JSON.stringify(offer)
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
-    return this.http.post(`${this.url}`, new_offer, { headers })
+    return this.http.post(this.url, new_offer, { headers })
   }
 }
